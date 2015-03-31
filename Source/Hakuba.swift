@@ -242,7 +242,7 @@ extension Hakuba : UITableViewDelegate {
             if !header.isEnabled {
                 return nil
             }
-            let headerView = tableView.dequeueReusableHeaderFooterViewWithIdentifier(header.identifier) as MYHeaderFooterView
+            let headerView = tableView.dequeueReusableHeaderFooterViewWithIdentifier(header.identifier) as! MYHeaderFooterView
             headerView.configureView(header)
             return headerView
         }
@@ -261,7 +261,7 @@ extension Hakuba : UITableViewDelegate {
             if !footer.isEnabled {
                 return nil
             }
-            let footerView = tableView.dequeueReusableHeaderFooterViewWithIdentifier(footer.identifier) as MYHeaderFooterView
+            let footerView = tableView.dequeueReusableHeaderFooterViewWithIdentifier(footer.identifier) as! MYHeaderFooterView
             footerView.configureView(footer)
             return footerView
         }
@@ -297,7 +297,7 @@ extension Hakuba : UITableViewDataSource {
     
     public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if let cellModel = self.cellViewModelAtIndexPath(indexPath) {
-            let cell = tableView.dequeueReusableCellWithIdentifier(cellModel.identifier, forIndexPath: indexPath) as MYTableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(cellModel.identifier, forIndexPath: indexPath) as! MYTableViewCell
             cell.configureCell(cellModel)
             return cell
         }
