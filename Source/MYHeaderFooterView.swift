@@ -36,11 +36,6 @@ public class MYHeaderFooterView : UITableViewHeaderFooterView, MYBaseViewProtoco
     private weak var delegate: MYBaseViewDelegate?
     public var selectionEnabled = true
     
-    public override init() {
-        super.init()
-        setup()
-    }
-    
     public required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()

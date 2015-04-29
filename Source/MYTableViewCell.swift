@@ -40,18 +40,8 @@ public class MYTableViewCell : UITableViewCell, MYBaseViewProtocol {
     private weak var delegate: MYBaseViewDelegate?
     weak var cellModel: MYCellModel?
     
-    public override init() {
-        super.init()
-        setup()
-    }
-    
     public required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setup()
-    }
-    
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
         setup()
     }
     
@@ -104,7 +94,7 @@ public extension MYTableViewCell {
 // MARK - Touch events
 public extension MYTableViewCell {
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        super.touchesBegan(touches, withEvent: event)
+       super.touchesBegan(touches, withEvent: event)
         if cellSelectionEnabled {
             highlight(false)
         }
